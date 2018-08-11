@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+        <form #userLoginForm="ngForm" (ngSubmit)="saveUser()">
+            <div class="panel panel-primary" style="margin-top: 10%;margin-left: 25%;margin-right: 25%">
+              <div class="panel-heading">
+                <h3 class="panel-title">Login </h3>
+              </div>
+              <div class="panel-body">
+          
+                <div class="form-group" [class.has-error]="name.invalid && name.touched" [class.has-success]="name.valid">
+                  <label for="name" class="control-label"> Name</label>
+                  <input id="name" required type="text" class="form-control" name="name" [(ngModel)]="userName" #name="ngModel">
+                  <span *ngIf="name.invalid && name.touched">
+                    fullName is required
+          
+                  </span>
+                </div>
+
+
+
+              </div>
+              <div class="panel-footer">
+                  <button class="btn btn-primary" type="submit" [disabled]="userLoginForm.invalid" >Save</button>
+                </div>
+            </div>
+          </form>
+    </div>
+  </div>
+</div>

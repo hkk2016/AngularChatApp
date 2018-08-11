@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Online Users</div>
+                <div class="panel-body" style="height:400px;overflow-y: scroll;width: 100%;">
+                    <div *ngFor="let user of onlineUsers">
+                        <div (click)="selectChat(user)" class="active" >
+                            <app-online-user [onlineUser]="user"></app-online-user>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div class="panel-footer">Panel Footer</div> -->
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">Messages to {{toUser.Name}}</div>
+                <div class="panel-body" style="height:400px;overflow-y: scroll;width: 100%">
+                    <div *ngFor="let chat of chats">
+                        <app-chat-message [sentByMe]="chat.sentBy" [message]="chat.message"></app-chat-message>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input [(ngModel)]="userMessage.message"  type="text" class="form-control" placeholder="Enter Your Messages Here">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" (click)="InsertMessage()"> Send </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div style="width: 100%;">
+<div *ngIf="sentByMe"  style="padding-top: 3px; height: 30px;width: 50%;border: 1px solid blue;border-radius: 5px;margin-bottom:15px;background-color:rgba(178, 205, 216, 0.534)">
+    <span>
+        <b>{{message}}</b>
+    </span>
+</div>
+
+<div  *ngIf="!sentByMe" style=" float: right;padding-top: 3px;height: 30px;width: 50%;border: 1px solid blue;border-radius: 5px;margin-bottom:15px;background-color:rgba(128, 197, 16, 0.534)">
+    <span>
+        <b>{{message}}</b>
+    </span>
+</div>
+<div style="clear: both;">
+
+</div>
+</div>
