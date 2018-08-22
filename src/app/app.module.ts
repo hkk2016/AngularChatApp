@@ -14,12 +14,13 @@ import { LoginComponent } from './login/login.component';
 
 import {GlobalVariablesService} from './login/loginService/global-variables.service'
 import { ChatService } from './chat/chatService/chat.service';
+import {LoginGuardService} from './login/login-guard.service'
 
 
 
 const appRoutes: Routes=[
   {path:'home',component:HomeComponent},
-  {path:'chat',component:ChatComponent},
+  {path:'chat',component:ChatComponent,canActivate:[LoginGuardService]},
   {path:'about',component:AboutComponent},
   {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'}]

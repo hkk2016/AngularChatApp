@@ -4,7 +4,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Online Users</div>
                 <div class="panel-body" style="height:400px;overflow-y: scroll;width: 100%;">
-                    <div *ngFor="let user of onlineUsers">
+                    <div *ngFor="let user of onlineUsers;let i=index" (click)="setClickedUser(i)" [class.selected]="i == selectedUser" class="selected" style="cursor:pointer">
                         <div (click)="selectChat(user)" class="active" >
                             <app-online-user [onlineUser]="user"></app-online-user>
                         </div>
